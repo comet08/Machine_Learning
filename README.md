@@ -30,3 +30,9 @@
 - GridSearchCV_매개변수...
 - roc_curve, roc_auc_score, onfusion_matrix, classification_report
       
+## 12주
+- 파이프라인 - pipeline, make_pipeline
+- 텍스트 데이터 처리
+- CountVectorizer, TfidfVectorizer
+- PorterStemmer, spacy
+- LatentDirichleAllocation
