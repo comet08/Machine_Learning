@@ -36,3 +36,9 @@
 - CountVectorizer, TfidfVectorizer
 - PorterStemmer, spacy
 - LatentDirichleAllocation
+
+## 13주
+- Deep Learning
+- Tensorflow, Keras
+- Sequential Model, Early Stopping, Checkpoint
+- relu, sigmoid, softmax
