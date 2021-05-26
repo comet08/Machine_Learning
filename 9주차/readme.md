@@ -28,4 +28,19 @@
 ### 전문가 지식 활용//
 
 
+## 검증
+### 교차 검증
+- cross_val_score
+- cross_validation ( 점수와 시간을 dict로 반환 )
 
+### 분할
+- StratifiedKFold ( 클래스 비율 유지하며 분할 ) .split
+- KFold
+- LeaveOneOut ( 하나의 샘플이 하나의 폴드 )
+- shufflesplit, StratifiedShuffleSplit
+- GroupFold / 그룹 정보를 추가로 제공하여 데이터 엿보기를 방지함
+
+### 매개변수 그리드
+- GridSearchCV 
+- 매개변수 튜닝용
+- param_grid를 사용
