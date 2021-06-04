@@ -40,17 +40,20 @@
 - cross_validation ( 점수와 시간을 dict로 반환 )
 
 ### 분할
-- StratifiedKFold ( 클래스 비율 유지하며 분할 ) .split
+- StratifiedKFold ( 클래스 비율 유지하며 분할 ) .split  계층ㅇ분할
 - KFold
 - LeaveOneOut ( 하나의 샘플이 하나의 폴드 )
 - shufflesplit, StratifiedShuffleSplit
-- GroupFold / 그룹 정보를 추가로 제공하여 데이터 엿보기를 방지함
+- train_rate / test_rate 를 설정함. 더한 비율이 1보다 작으면 서브 샘플링이 됨
+- GroupKFold / 그룹 정보를 추가로 제공하여 데이터 엿보기를 방지함  
+- ex) cross_val_score(model, x, y, groups, cv= GroupKFold(n_splits=5))
 
 ### 매개변수 그리드
 - GridSearchCV 
 - 매개변수 튜닝용
 - param_grid를 사용
 - cv = 으로 중첩 지정
+- cross_val_score(GridSearchCV( ... ) , cv=n) 
 
 
 ## 평가 지표
@@ -61,4 +64,12 @@
 - f1 score 2(정밀도 * 재현률) / (정밀도 + 재현률)
 - 정밀도(precision) = 양성으로 예측한 것들 중에 진짜 양성
 - 재현률(recall) = 실제 양성인 것들 중에 양성으로 예측한 것
-- ... f1은 f1_micro 등 여러 종류가 있음
+- ... f1은 f1_micro, macro, weighted 등 여러 종류가 있음
+- ROC = TPR / FPR
+- TPR = 재현률 , FPR = 거짓양성 = FP / (FP + TN)
+- ROC_AUC = ROC커브 아래의 너비
+
+
+
+- 비즈니스 임팩트
+- 입원 환자 수를 줄이기 위해, 사이트 유입을 늘리기 위해..
