@@ -7,12 +7,20 @@
 - - 특성마다 적용 방법 선택
 - sklearn.preprocessing.KBinsDiscretizer = 구간 분할
 - - (n_bins=구간수, strategy='' ... )
+- - 결정트리는 특성별로 가장 좋은 구간을 학습해서 구간 나누기가 도움 되지 않음.
+- - 고차원 데이터 선형 모델 구축시 유용
+
 - sklearn.preprocessing.PolynomialFeatures = 다항식 추가
+- - 데이터의 특성 강화
 - - (degree = , include_bias= / 선형 회귀에서 곡선 회귀 가능해짐
+- - ex) degree = 2, feature = 13이라면
+- - transform 후 = (13 + 14C2 + 1) = 105
+- - ` n = 13 + 2 - 1 / k = 2 `
 
 
-- 원본 추가, 원본과의 곱 추가, 다항식 추가, 구간분할
-
+- - 원본 추가 : 구간 기울기가 같음
+- - 원본과의 곱 추가 : 구간별 기울기와 절편이 다름
+- - 다항식 추가 
 
 ## 특성 자동선택
 ### 일변량 통계
