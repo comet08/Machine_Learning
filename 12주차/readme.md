@@ -14,7 +14,7 @@
 -  모델의 매개변수 + 전처리 과정의 매개변수를 동시 탐색 / 가능한 모든 조합 시도
 -  탐색 범위가 커지면 시간이 많이 소요됨
 
-```
+```python
 pipe = Pipeline([('preprocessing', StandardScaler()), ('classifier', SVC())])
 param_grid = [
   {'classifier': [SVC()], 'preprocessing': [StandardScaler()], 'classifier__gamma': 
@@ -58,8 +58,7 @@ param_grid = [
 - tf idf가 높은 특성은 특정한 것을 나타내는 경우가 많음
 - idf 가 낮으면 자주 나타나서 덜 중요하다고 생각되는 단어
 
-```
-
+```python
 X_train = vectorizer.transform(text_train)
 max_value = X_train.max(axis=0).toarray().ravel()
 sorted_by_tfidf = max_value.argsort()
