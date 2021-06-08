@@ -24,11 +24,11 @@
 
 ## 9주 
 - 데이터 표현과 특성 선택
-- ohe, columntransformer, KBinsDiscretizer, PolynomialFeatures, SelectPercentile, SelectFromModel, RFE
+- get_dummies, onehotencoder, columntransformer, KBinsDiscretizer, PolynomialFeatures, SelectPercentile, SelectFromModel, RFE
 - 모델 검증과 성능 향상
-- cross_val_score, cross_val_validate, StratifiedKFold, KFold, LeaveOneOut, ShuffleSplit, GroupFold
+- cross_val_score, cross_val_validate, StratifiedKFold, KFold, LeaveOneOut, ShuffleSplit, GroupKFold
 - GridSearchCV_매개변수...
-- roc_curve, roc_auc_score, onfusion_matrix, classification_report
+- roc_curve, roc_auc_score, confusion_matrix, classification_report
       
 ## 12주
 - 파이프라인 - pipeline, make_pipeline
