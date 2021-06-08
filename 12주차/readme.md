@@ -86,6 +86,14 @@ print("가장 낮은 idf를 가진 특성 : \n", feature_names[sorted_by_idf[:10
 - `stemmer.stem(token.norm_.lower()) for token in spacy`
 - 표제어의 성능이 더 좋은..
 
+```python
+pipe = make_pipeline(
+    TfidfVectorizer(tokenizer=custom_tokenizer, min_df=5, ngram_range=(1,3)), 
+    LogisticRegression(max_iter=5000)
+    )
+
+```
+
 
 ### LDA
 - sklearn.decomposition.LatenDirichletAllocation
@@ -93,3 +101,12 @@ print("가장 낮은 idf를 가진 특성 : \n", feature_names[sorted_by_idf[:10
 - n_components로 그룹 수 설정 가능
 - 훈련 샘플이 적고 특성이 많을때 유용
 - 지도 학습을 위한 압축 표현으로 사용
+
+```python
+sorting = np.argsort(lda.components_, axis=1)[:, ::-1]
+
+feature_names = np.array(vect.get_feature_names())
+
+mglearn.tools.print_topics(topics=range(10), feature_names=feature_names,
+                          sorting=sorting, topics_per_chunk=5, n_words=10)
+```
