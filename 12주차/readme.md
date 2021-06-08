@@ -39,15 +39,16 @@ param_grid = [
 - 출력은 각 문서에서 나타난 단어의 횟수가 담긴 벡터
 - 희소 행렬로 나옴 / vocabuluary_ 에 저장
 - min_df로 최소 문서 설정 가능 / 특성의 개수가 줄어 처리속도 개선. 희귀 단어나 철자 오류 삭제
-- 
+
 - stop_words로 불용어 사용 가능 / 불용어란 너무 빈번하게 사용하여 유용하지 않은 단어들
 
 - 간단한 방법.
 - 하지만 의미 없는 특성(숫자들)을 많이 생성
 - 스팸, 감정분석
-![image](https://user-images.githubusercontent.com/51084402/121146964-65d62e00-c87b-11eb-894e-47982ce8ab8e.png)
 
 ### Tf-idf
+![image](https://user-images.githubusercontent.com/51084402/121146964-65d62e00-c87b-11eb-894e-47982ce8ab8e.png)
+
 - tfidf를 구하고 L2 정규화
 - 특정 문서에 자주 나타나는 단어는 그 문서를 잘 설명하는 단어! 가중치 높임
 
