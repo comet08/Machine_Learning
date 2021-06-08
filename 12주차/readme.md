@@ -58,6 +58,18 @@ param_grid = [
 - tf idf가 높은 특성은 특정한 것을 나타내는 경우가 많음
 - idf 가 낮으면 자주 나타나서 덜 중요하다고 생각되는 단어
 
+```
+
+X_train = vectorizer.transform(text_train)
+max_value = X_train.max(axis=0).toarray().ravel()
+sorted_by_tfidf = max_value.argsort()
+
+print("가장 낮은 tfidf를 가진 특성:\n", feature_names[sorted_by_tfidf[:20]])
+print("가장 높은 tfidf를 가진 특성:\n", feature_names[sorted_by_tfidf[-20:]])
+
+sorted_by_idf = np.argsort(vectorizer.idf_)
+print("가장 낮은 idf를 가진 특성 : \n", feature_names[sorted_by_idf[:100]])
+```
 
 ### ngram
 - `ngram_range` 매개변수로 토큰의 범위를 설정
